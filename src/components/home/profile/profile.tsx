@@ -4,6 +4,7 @@ import React from "react";
 
 function Profile() {
   const { data, isLoading } = useGetTentangKami();
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 p-10 bg-white space-y-2">
       {data?.key !== undefined && isLoading === false ? (
@@ -11,7 +12,7 @@ function Profile() {
           <img
             src={data.app_config_image}
             className="rounded-img h-[500px] "
-            alt={"rajakertas"}
+            alt={data.value.product_image_alt}
           />
         </div>
       ) : null}
