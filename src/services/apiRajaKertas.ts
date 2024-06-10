@@ -110,6 +110,13 @@ export const useGetMainProduct = () =>
     queryKey: ["mainproduct"],
   });
 
+export const getWhatsapp = () => getRequest(`/public/config-key/WHATSAPP/`, {});
+export const useGetWhasapp = () =>
+  useQuery({
+    queryFn: getWhatsapp,
+    queryKey: ["whatsapp"],
+  });
+
 export const getProductDetail = (params: any) =>
   getRequest(`/product-detail/${params}/`, {});
 export const useGetProductDetail = (params: any) =>

@@ -4,7 +4,7 @@ import { Button } from "antd";
 import React from "react";
 import type { CollapseProps } from "antd";
 import { Collapse } from "antd";
-import { useGetFaq } from "@/services/apiRajaKertas";
+import { useGetFaq, useGetWhasapp } from "@/services/apiRajaKertas";
 import { handleBeli } from "@/helpers/tools";
 
 const text = `
@@ -55,6 +55,7 @@ function Question() {
     console.log(key);
   };
   const { data, isLoading } = useGetFaq();
+  const { data: whatsapp, isLoading: loadingWhatsapp } = useGetWhasapp();
   return (
     <div className="bg-white text-black py-20 px-4 grid grid-cols-1 lg:grid-cols-3 space-x-4 space-y-2 lg:px-10">
       <div className="flex space-y-6 flex-col col-span-1 mb-10">
@@ -63,9 +64,11 @@ function Question() {
           Temukan jawaban atas pertanyaan yang sering diajukan tentang produk
           dan layanan kami.
         </p>
-        <Button className="w-1/2" onClick={() => handleBeli()}>
-          Hubungi
-        </Button>
+        {whatsapp?.key !== undefined && loadingWhatsapp === false ? (
+          <Button className="w-1/2" onClick={() => handleBeli(whatsapp)}>
+            Hubungi
+          </Button>
+        ) : null}
       </div>
 
       <Collapse

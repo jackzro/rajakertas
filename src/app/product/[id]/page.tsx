@@ -1,5 +1,6 @@
 "use client";
 
+import WhatsappFloat from "@/components/WhatsappFloat";
 import FooterRaja from "@/components/home/footer/Footer";
 import Galery from "@/components/home/galery/galery";
 import Pemesanan from "@/components/productscom/Pemesanan";
@@ -54,22 +55,7 @@ function DetailProduct() {
           ) : null}
         </div>
       </div>
-      <div>
-        <WhatsAppOutlined
-          onClick={() => handleBeli()}
-          style={{
-            backgroundColor: "green",
-            fontSize: "50px",
-            position: "fixed",
-            zIndex: 100,
-            textAlign: "center",
-            borderRadius: 50,
-            bottom: "40px",
-            right: "40px",
-            cursor: "pointer",
-          }}
-        />
-      </div>
+      <WhatsappFloat />
     </Suspense>
   );
 }
