@@ -15,14 +15,12 @@ const formSchema = z.object({
   name: z.string(),
   email: z.string(),
   message: z.string(),
-  term: z.boolean(),
 });
 
 type FieldType = {
   name?: string;
   email?: string;
   message?: string;
-  terms?: boolean;
 };
 
 function ComponentContactUs() {
@@ -142,14 +140,14 @@ function ComponentContactUs() {
             <Input.TextArea rows={4} style={{ width: "100%" }} />
           </Form.Item>
 
-          <Form.Item<FieldType>
+          {/* <Form.Item<FieldType>
             name="terms"
             valuePropName="checked"
             // wrapperCol={{ offset: 8, span: 16 }}
             rules={[{ required: true, message: "Please check the box!" }]}
           >
             <Checkbox>I accept the Terms</Checkbox>
-          </Form.Item>
+          </Form.Item> */}
 
           <Form.Item>
             <Button type="primary" htmlType="submit">

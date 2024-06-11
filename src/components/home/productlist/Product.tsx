@@ -27,7 +27,7 @@ function Product({ name, price, src, alt, id, urlSlug }: any) {
         className="object-scale-down"
         alt={alt}
         // onClick={() => router.push(`/product/detail/id`)}
-        onClick={() => router.push(`/product/${urlSlug}?kertas=${id}`)}
+        onClick={() => router.push(`/product/${urlSlug}`)}
       />
       <h1 className="text-black">{name}</h1>
     </div>

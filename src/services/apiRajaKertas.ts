@@ -118,7 +118,7 @@ export const useGetWhasapp = () =>
   });
 
 export const getProductDetail = (params: any) =>
-  getRequest(`/product-detail/${params}/`, {});
+  getRequest(`/product-detail/?url_slug=${params}`, {});
 export const useGetProductDetail = (params: any) =>
   useQuery({
     queryFn: () => getProductDetail(params),

@@ -5,10 +5,7 @@ import FooterRaja from "@/components/home/footer/Footer";
 import Galery from "@/components/home/galery/galery";
 import Pemesanan from "@/components/productscom/Pemesanan";
 import ProductDetailCom from "@/components/productscom/ProductDetailCom";
-import { handleBeli } from "@/helpers/tools";
 import { useGetProductDetail } from "@/services/apiRajaKertas";
-import { WhatsAppOutlined } from "@ant-design/icons";
-import { useSearchParams } from "next/navigation";
 import React, { Suspense } from "react";
 
 const galerylist = [
@@ -26,22 +23,20 @@ const galerylist = [
   },
 ];
 
-function DetailProduct() {
-  const searchParams = useSearchParams();
-  const kertas = searchParams.get("kertas") as string;
-  const { data, isLoading } = useGetProductDetail(kertas);
-
+function DetailProduct({ params }: any) {
+  const { id } = params;
+  const { data, isLoading } = useGetProductDetail(id);
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <div>
         <div className="bg-white text-black">
-          {data?.product !== undefined && isLoading === false ? (
+          {data?.results.length !== 0 && isLoading === false ? (
             <>
               <ProductDetailCom
-                title={data.product.title}
-                description={data.description}
-                src={data.product.product_image}
-                alt={data.product.product_image_alt}
+                title={data.results[0].product.title}
+                description={data.results[0].description}
+                src={data.results[0].product.product_image}
+                alt={data.results[0].product.product_image_alt}
               />
               <Galery
                 paragraf={
@@ -49,7 +44,7 @@ function DetailProduct() {
                 }
                 galerylist={galerylist}
               />
-              <Pemesanan title={data.product.title} />
+              <Pemesanan title={data.results[0].product.title} />
               <FooterRaja />
             </>
           ) : null}

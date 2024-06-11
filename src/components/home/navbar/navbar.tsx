@@ -21,8 +21,8 @@ function Navbar() {
       <>
         <button
           className={`${
-            drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
-          } `}
+            drawer === true ? " w-full rounded-md p-2" : ""
+          } hover:text-brownkertas`}
           onClick={() => router.push("/")}
         >
           Home
@@ -30,7 +30,7 @@ function Navbar() {
         <button
           className={`${
             drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
-          } `}
+          }hover:text-brownkertas`}
           onClick={() => router.push("/product")}
         >
           Product
@@ -38,7 +38,7 @@ function Navbar() {
         <button
           className={`${
             drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
-          } `}
+          }  hover:text-brownkertas`}
           onClick={() => router.push("/contact-us")}
         >
           Contact Us
@@ -90,11 +90,9 @@ function Navbar() {
             />
           ) : null}
         </div>
-        <div className="hidden space-x-10 items-center justify-center lg:flex pt-6 font-semibold">
+        <div className="hidden space-x-10 items-center justify-center lg:flex font-semibold">
           {NavbarMenu(false)}
         </div>
-
-        <div className="items-center justify-center flex pt-6"></div>
       </div>
     </div>
   );
