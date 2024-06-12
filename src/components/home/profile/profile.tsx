@@ -19,25 +19,9 @@ function Profile() {
 
       {data?.key !== undefined && isLoading === false ? (
         <div className="text-black flex flex-col items-start justify-center space-y-6">
-          <span className="text-6xl">Tentang Kami</span>
+          <span className="text-6xl">{data.value.title}</span>
           <span>
-            <p>
-              Kami adalah RajaKertas, sebuah perusahaan yang menyediakan dan
-              mendistribusikan kertas secara online. Misi kami adalah
-              menyediakan kertas sebagai bahan baku untuk bisnis atau ritel.
-              Kami saat ini menyediakan kertas ivory, kraft paper, art carton,
-              dan wrapping paper. Di masa depan, kami akan menyediakan lebih
-              banyak jenis kertas.
-            </p>
-            <br></br>
-            <p>
-              Kami juga perusahaan paper converting adalah perusahaan yang
-              bergerak di industri pengolahan kertas. Mereka mengambil bahan
-              baku kertas dalam berbagai bentuk dan mengolahnya menjadi produk
-              kertas yang siap pakai untuk berbagai keperluan. Proses konversi
-              ini bisa meliputi berbagai tahapan, seperti pemotongan, pelapisan,
-              melipat, dan pencetakan.
-            </p>
+            <p>{data.value.description}</p>
           </span>
         </div>
       ) : null}

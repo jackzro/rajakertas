@@ -57,7 +57,7 @@ function Question() {
   const { data, isLoading } = useGetFaq();
   const { data: whatsapp, isLoading: loadingWhatsapp } = useGetWhasapp();
   return (
-    <div className="bg-white text-black py-20 px-4 grid grid-cols-1 lg:grid-cols-3 space-x-4 space-y-2 lg:px-10">
+    <div className="bg-white text-black py-20 px-4 grid grid-cols-1 lg:grid-cols-3 space-x-14 space-y-2 lg:px-10">
       <div className="flex space-y-6 flex-col col-span-1 mb-10">
         <h1 className="text-6xl font-bold">Pertanyaan</h1>
         <p>
@@ -66,7 +66,7 @@ function Question() {
         </p>
         {whatsapp?.key !== undefined && loadingWhatsapp === false ? (
           <Button className="w-1/2" onClick={() => handleBeli(whatsapp)}>
-            Hubungi
+            Hubungi Kami
           </Button>
         ) : null}
       </div>
