@@ -17,7 +17,7 @@ function FooterRaja() {
   return (
     <div className="px-10 pt-4 text-white bg-brownkertas">
       {data?.key !== undefined && isLoading === false ? (
-        <div className="grid md:grid-cols-3 space-y-2 md:space-x-6 justify-evenly">
+        <div className="grid md:grid-cols-3 space-y-10 md:space-x-6 justify-evenly">
           <div className="flex flex-col space-y-6">
             <span>
               <img src={data.app_config_image} width={150} height={100} />
@@ -46,7 +46,7 @@ function FooterRaja() {
 
           {/* <div> */}
           {/* <div className="grid grid-cols-1 md:grid-cols-2 md:justify-items-end text-white"> */}
-          <div className=" flex flex-col md:items-center ">
+          <div className=" flex flex-col md:items-center">
             <div className="flex flex-col space-y-2 items-start">
               {data?.value?.url_list_1.map((url: any) => {
                 return (

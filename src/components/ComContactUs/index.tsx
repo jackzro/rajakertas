@@ -1,7 +1,15 @@
 "use client";
 import { usePostContactUs } from "@/services/apiRajaKertas";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button, Checkbox, Form, Input, Space, notification } from "antd";
+import {
+  Button,
+  Checkbox,
+  ConfigProvider,
+  Form,
+  Input,
+  Space,
+  notification,
+} from "antd";
 import { NotificationPlacement } from "antd/es/notification/interface";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -102,13 +110,13 @@ function ComponentContactUs() {
           // onFinishFailed={onFinishFailed}
         >
           <Form.Item<FieldType>
-            label="Name"
+            label="Nama"
             name="name"
             labelCol={{ span: 24 }}
             style={{
               width: "100%",
             }}
-            rules={[{ required: true, message: "Please input your name!" }]}
+            rules={[{ required: true, message: "Tolong isi nama anda!" }]}
           >
             <Input />
           </Form.Item>
@@ -118,10 +126,10 @@ function ComponentContactUs() {
             name="email"
             labelCol={{ span: 24 }}
             rules={[
-              { required: true, message: "Please input your email!" },
+              { required: true, message: "Tolong isi email anda!" },
               {
                 type: "email",
-                message: "The input is not valid E-mail!",
+                message: "Tolong isi E-mail! anda dengan benar! ",
               },
             ]}
           >
@@ -129,13 +137,13 @@ function ComponentContactUs() {
           </Form.Item>
 
           <Form.Item<FieldType>
-            label="Message"
+            label="Pesan"
             name="message"
             labelCol={{ span: 24 }}
             style={{
               width: "100%",
             }}
-            rules={[{ required: true, message: "Please input your message!" }]}
+            rules={[{ required: true, message: "Tolong isi pesan anda!" }]}
           >
             <Input.TextArea rows={4} style={{ width: "100%" }} />
           </Form.Item>
@@ -150,9 +158,26 @@ function ComponentContactUs() {
           </Form.Item> */}
 
           <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
+            <ConfigProvider
+              theme={{
+                components: {
+                  Button: {
+                    colorPrimaryHover: "#B99470",
+                    defaultHoverBg: "",
+                  },
+                },
+              }}
+            >
+              <Button
+                style={{
+                  backgroundColor: "#B99470",
+                  color: "white",
+                }}
+                htmlType="submit"
+              >
+                Submit
+              </Button>
+            </ConfigProvider>
           </Form.Item>
         </Form>
       </div>

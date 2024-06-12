@@ -3,7 +3,13 @@ import React, { Suspense } from "react";
 
 function ProductLayout({ children }: any) {
   return (
-    <Suspense fallback={<>Loading...</>}>
+    <Suspense
+      fallback={
+        <div className="bg-black min-h-screen">
+          <p className="text-white">Loading...</p>
+        </div>
+      }
+    >
       <div>
         <Navbar />
         {children}

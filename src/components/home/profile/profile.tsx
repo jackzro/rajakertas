@@ -11,7 +11,7 @@ function Profile() {
         <div className="md:p-20">
           <img
             src={data.app_config_image}
-            className="rounded-img h-[500px] "
+            className="rounded-img h-[300px] md:h-[500px] "
             alt={data.value.product_image_alt}
           />
         </div>

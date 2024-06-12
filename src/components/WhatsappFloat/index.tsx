@@ -9,10 +9,10 @@ function WhatsappFloat() {
     <>
       {data?.key !== undefined && isLoading === false ? (
         <WhatsAppOutlined
-          className="animate-bounce"
+          // className="animate-bounce"
           onClick={() => handleBeli(data?.value)}
           style={{
-            backgroundColor: "green",
+            backgroundColor: "#25D366",
             fontSize: "50px",
             position: "fixed",
             zIndex: 100,
