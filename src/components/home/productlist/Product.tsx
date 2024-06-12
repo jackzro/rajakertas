@@ -1,11 +1,12 @@
 "use client";
 import useWindowSize from "@/hooks/useWIndow";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 function Product({ name, price, src, alt, id, urlSlug }: any) {
   const router = useRouter();
+  const pathname = usePathname();
   const window = useWindowSize();
 
   return (
@@ -29,7 +30,11 @@ function Product({ name, price, src, alt, id, urlSlug }: any) {
         // onClick={() => router.push(`/product/detail/id`)}
         onClick={() => router.push(`/product/${urlSlug}`)}
       />
-      <h1 className="text-white">{name}</h1>
+      <h1
+        className={`${pathname === "/product" ? "text-black" : "text-white"}`}
+      >
+        {name}
+      </h1>
     </div>
   );
 }
