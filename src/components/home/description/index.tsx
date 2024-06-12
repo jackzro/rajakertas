@@ -9,7 +9,7 @@ function Description({ src, alt, header, paragraph }: any) {
         <div className="container">
           <div className="flex max-h-[60rem] min-h-svh items-center py-16 md:py-24 lg:py-28 text-white">
             <div className="w-[800px]">
-              <h1 className="mb-5 text-lg leading-none font-semibold md:mb-6 md:text-5xl md:leading-tight">
+              <h1 className="mb-5 text-2xl leading-none font-semibold md:mb-6 md:text-5xl md:leading-tight">
                 {header}
               </h1>
               <p className="text-md text-text-alternative md:text-lg">

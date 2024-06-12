@@ -123,7 +123,7 @@ function Mitra() {
   };
   return (
     <div className="flex flex-col justify-center items-center space-y-6 p-20 text-black bg-white">
-      <h1>Mitra oleh salah satu Perusahaan Terkemuka di Dunia.</h1>
+      <h1 className="text-3xl lg:text-5xl font-extrabold">Partner Kami</h1>
       {data?.results.length !== 0 && isLoading === false ? divideArray() : null}
       {/* <div className="grid grid-cols-3 lg:grid-cols-5 space-y-4 place-items-center  md:px-28">
         {data?.results.length !== 0 && isLoading === false

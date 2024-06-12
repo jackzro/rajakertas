@@ -29,7 +29,7 @@ function Product({ name, price, src, alt, id, urlSlug }: any) {
         // onClick={() => router.push(`/product/detail/id`)}
         onClick={() => router.push(`/product/${urlSlug}`)}
       />
-      <h1 className="text-black">{name}</h1>
+      <h1 className="text-white">{name}</h1>
     </div>
   );
 }

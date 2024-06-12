@@ -21,7 +21,7 @@ function Navbar() {
       <>
         <button
           className={`${
-            drawer === true ? " w-full rounded-md p-2" : ""
+            drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
           } hover:text-brownkertas`}
           onClick={() => router.push("/")}
         >
