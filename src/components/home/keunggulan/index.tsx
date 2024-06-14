@@ -3,11 +3,10 @@ import { useGetKeunggulan } from "@/services/apiRajaKertas";
 import React from "react";
 
 function Keunggulan() {
-  const { data, isLoading } = useGetKeunggulan();
-  console.log(data);
+  // const { data, isLoading } = useGetKeunggulan();
   return (
     <div>
-      {data?.key === undefined && isLoading === false ? (
+      {/* {data?.key === undefined && isLoading === false ? (
         <>
           {data?.value.map((feature: any) => {
             <div>
@@ -15,7 +14,7 @@ function Keunggulan() {
             </div>;
           })}
         </>
-      ) : null}
+      ) : null} */}
     </div>
   );
 }

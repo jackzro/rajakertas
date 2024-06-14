@@ -7,53 +7,10 @@ import { Collapse } from "antd";
 import { useGetFaq, useGetWhasapp } from "@/services/apiRajaKertas";
 import { handleBeli } from "@/helpers/tools";
 
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
-const items: CollapseProps["items"] = [
-  {
-    label: "Apakah kertasnya bisa dipotong sesuai ukuran kami ?",
-    children:
-      "sangat bisa kita spesialis custom potong ukuran kertas plano yang diinginkan dari lebar kertas roll berapa lalu kita potong panjang kertas sesuai keinginan sehingga mendapat sheet brp x brp",
-  },
-  {
-    label: "Terdapat roll kertas ukuran berapa ?",
-    children: "standar lebar 90cm 100cm.",
-  },
-  {
-    label: "Apakah bisa pesen roll kertas saja? ",
-    children:
-      "Sangat bisa kita bisa sampe kirim roll kertas satu indonesia dan untuk lebar kertasnya bisa lanjut by via wa untuk roll kertas yang diinginkan berapa",
-  },
-  {
-    label: "⁠Terdapat kurir kusus untuk kirim kertas ?",
-    children:
-      "Kita ada truck khusus untuk pengiriman roll kertas untuk pabrik percetakan anda.",
-  },
-  {
-    label: "Minimum order berapa pcs?",
-    children: "1 rim atau 500 pcs.",
-  },
-
-  {
-    label: "Apakah kertas ini sudah food grade?",
-    children:
-      "Sudah food grade yang tipe SPE artinya sudah ada laminasi food grade dari bahan kertasnya",
-  },
-  {
-    label: "Contoh produk packaging yang bisa dibuat apa saja?",
-    children:
-      "takeaway box craft, takeaway box full color, kertas minyak makanan, paper bag, hampers box, dll",
-  },
-];
-
 function Question() {
-  const onChange = (key: string | string[]) => {
-    console.log(key);
-  };
+  // const onChange = (key: string | string[]) => {
+  //   console.log(key);
+  // };
   const { data, isLoading } = useGetFaq();
   const { data: whatsapp, isLoading: loadingWhatsapp } = useGetWhasapp();
   return (

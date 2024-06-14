@@ -5,6 +5,7 @@ import Product from "../productlist/Product";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import useWindowSize from "@/hooks/useWIndow";
 import { useGetHomeGallery } from "@/services/apiRajaKertas";
+import Image from "next/image";
 
 function Galery({ paragraf, galerylist }: any) {
   const { data, isLoading } = useGetHomeGallery();
@@ -43,10 +44,13 @@ function Galery({ paragraf, galerylist }: any) {
         {data?.key === undefined && isLoading === false
           ? data?.results.map((galleryhome: any) => (
               <div className="p-1" key={galleryhome.id}>
-                <img
-                  className="object-scale-down"
+                <Image
+                  className="w-full object-scale-down"
                   src={galleryhome.home_gallery_image}
                   alt={galleryhome.home_gallery_image_alt}
+                  height="0"
+                  width="0"
+                  sizes="100vw"
                 />
               </div>
             ))

@@ -1,48 +1,8 @@
 "use client";
 
 import React from "react";
-import { CodeSandboxOutlined } from "@ant-design/icons";
 import { useGetKeunggulan } from "@/services/apiRajaKertas";
-
-const features = [
-  {
-    icon: {
-      src: <CodeSandboxOutlined style={{ fontSize: "100px", color: "#08c" }} />,
-      alt: "",
-    },
-    heading: "Keunggulan RajaKertas",
-    description: "Kami menyediakan berbagai jenis kertas berkualitas tinggi.",
-    buttonTitle: "Lihat Lebih Lanjut",
-  },
-  {
-    icon: {
-      src: <CodeSandboxOutlined style={{ fontSize: "100px", color: "#08c" }} />,
-      alt: "",
-    },
-    heading: "Manfaat RajaKertas",
-    description: "Kami membantu memenuhi kebutuhan kertas Anda.",
-    buttonTitle: "Lihat Lebih Lanjut",
-  },
-  {
-    icon: {
-      src: <CodeSandboxOutlined style={{ fontSize: "100px", color: "#08c" }} />,
-      alt: "",
-    },
-    heading: "Fitur RajaKertas",
-    description: "Temukan berbagai fitur unggulan dari RajaKertas.",
-    buttonTitle: "Lihat Lebih Lanjut",
-  },
-  {
-    icon: {
-      src: <CodeSandboxOutlined style={{ fontSize: "100px", color: "#08c" }} />,
-      alt: "",
-    },
-    heading: "Industri Kami",
-    description:
-      "Kami melayani berbagai industri dengan kebutuhan kertas mereka.",
-    buttonTitle: "Lihat Lebih Lanjut",
-  },
-];
+import Image from "next/image";
 
 function Features() {
   const { data, isLoading } = useGetKeunggulan();
@@ -56,10 +16,12 @@ function Features() {
                   return (
                     <div key={unggul.title}>
                       <div className="mb-3 md:mb-4">
-                        <img
+                        <Image
                           src={"/images/Icon/icon.svg"}
                           className="size-12"
                           alt={unggul.title}
+                          width={100}
+                          height={100}
                         />
                       </div>
                       <h1 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">
@@ -74,11 +36,14 @@ function Features() {
           </div>
           {data?.key !== undefined && isLoading === false ? (
             <div className="flex justify-center items-center">
-              <img
+              {/* <Image
                 src={data.app_config_image}
-                className="rounded-img object-scale-down"
+                className="rounded-img"
                 alt={data.app}
-              />
+                width={1000}
+                height={1000}
+                objectFit="contain"
+              /> */}
             </div>
           ) : null}
         </div>

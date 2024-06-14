@@ -4,6 +4,7 @@ import "./globals.css";
 import ReactQueryProvider from "@/utils/ReactQueryProvider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { WhatsAppOutlined } from "@ant-design/icons";
+import GoogleAnalytic from "@/components/GoogleAnalytic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytic />
       <ReactQueryProvider>
         <body className={inter.className}>
           <AntdRegistry>{children} </AntdRegistry>

@@ -1,8 +1,7 @@
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 import React from "react";
 
 function Description({ src, alt, header, paragraph }: any) {
-  const router = useRouter();
   return (
     <div className="relative px-[7%]">
       <>
@@ -19,7 +18,7 @@ function Description({ src, alt, header, paragraph }: any) {
           </div>
         </div>
         <div className="absolute inset-0 -z-10">
-          <img src={src} className="size-full object-cover" alt={alt} />
+          <Image src={src} alt={alt} fill objectFit="cover" priority />
           <div className="absolute inset-0 bg-black/50" />
         </div>
       </>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 function ProductDetailCom({ title, description, src, alt }: any) {
@@ -9,7 +10,14 @@ function ProductDetailCom({ title, description, src, alt }: any) {
           <p>{description}</p>
         </span>
         <span className="">
-          <img src={src} className="rounded-img object-scale-down" alt={alt} />
+          <Image
+            src={src}
+            className="rounded-img w-full object-scale-down"
+            alt={alt}
+            height="0"
+            width="0"
+            sizes="100vw"
+          />
         </span>
       </div>
     </div>

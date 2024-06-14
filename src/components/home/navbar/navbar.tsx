@@ -2,6 +2,9 @@
 import { useGetLogoHitam } from "@/services/apiRajaKertas";
 import { MenuOutlined } from "@ant-design/icons";
 import { Button, Drawer } from "antd";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -19,30 +22,31 @@ function Navbar() {
   const NavbarMenu = (drawer: any) => {
     return (
       <>
-        <button
+        <Link
           className={`${
             drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
           } hover:text-brownkertas`}
-          onClick={() => router.push("/")}
+          href={"/"}
         >
           Home
-        </button>
-        <button
+        </Link>
+        <Link
           className={`${
             drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
           }hover:text-brownkertas`}
-          onClick={() => router.push("/product")}
+          href={"/product"}
         >
           Product
-        </button>
-        <button
+        </Link>
+
+        <Link
           className={`${
             drawer === true ? "hover:bg-white w-full rounded-md p-2" : ""
           }  hover:text-brownkertas`}
-          onClick={() => router.push("/contact-us")}
+          href="/contact-us"
         >
           Contact Us
-        </button>
+        </Link>
       </>
     );
   };
@@ -61,9 +65,10 @@ function Navbar() {
           <div className="text-black flex flex-col space-y-4 justify-center items-center">
             <span className="mb-10 border-b-2 border-black w-full flex justify-center items-center">
               {logo?.key !== undefined && loadingLogo === false ? (
-                <img
+                <Image
                   className="cursor-pointer"
                   src={logo.app_config_image}
+                  alt={logo.app_config_image_alt}
                   width={150}
                   height={150}
                 />
@@ -81,9 +86,10 @@ function Navbar() {
             />
           </span>
           {logo?.key !== undefined && loadingLogo === false ? (
-            <img
+            <Image
               className="cursor-pointer"
               src={logo.app_config_image}
+              alt={logo.app_config_image_alt}
               width={150}
               height={150}
               onClick={() => router.push("/")}

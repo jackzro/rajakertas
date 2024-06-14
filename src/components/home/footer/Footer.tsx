@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 import { useGetFooter } from "@/services/apiRajaKertas";
 import Link from "next/link";
+import Image from "next/image";
 
 function FooterRaja() {
   const { data, isLoading } = useGetFooter();
@@ -20,7 +21,12 @@ function FooterRaja() {
         <div className="grid md:grid-cols-3 space-y-10 md:space-x-6 justify-evenly">
           <div className="flex flex-col space-y-6">
             <span>
-              <img src={data.app_config_image} width={150} height={100} />
+              <Image
+                src={data.app_config_image}
+                width={150}
+                height={100}
+                alt={data.app_config_image_alt}
+              />
             </span>
 
             <span>

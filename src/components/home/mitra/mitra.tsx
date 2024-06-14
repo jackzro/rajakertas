@@ -1,37 +1,8 @@
 "use client";
 import useWindowSize from "@/hooks/useWIndow";
 import { useGetPartner } from "@/services/apiRajaKertas";
+import Image from "next/image";
 import React from "react";
-
-const paramitra = [
-  {
-    src: "/images/mitra/mitra1.png",
-  },
-  {
-    src: "/images/mitra/mitra2.png",
-  },
-  {
-    src: "/images/mitra/mitra3.png",
-  },
-  {
-    src: "/images/mitra/mitra4.png",
-  },
-  {
-    src: "/images/mitra/mitra5.png",
-  },
-  {
-    src: "/images/mitra/mitra6.png",
-  },
-  {
-    src: "/images/mitra/mitra7.png",
-  },
-  {
-    src: "/images/mitra/mitra8.png",
-  },
-  {
-    src: "/images/mitra/mitra9.png",
-  },
-];
 
 function Mitra() {
   const { data, isLoading } = useGetPartner();
@@ -58,14 +29,11 @@ function Mitra() {
             key={partner.id}
             className={` flex items-center justify-center px-4 `}
           >
-            <img
-              // className={
-              //   window.width! < 600 && window.width! > 100
-              //     ? "h-[50px] w-[50px]"
-              //     : "h-[100px] w-[100px]"
-              // }
-              className="h-[100px] w-[100px]"
-              // className="object-scale-down"
+            <Image
+              className="w-full object-scale-down"
+              width="0"
+              height="0"
+              sizes="100vw"
               src={partner.our_partner_image}
               alt={partner.our_partner_image_alt}
             />
@@ -77,20 +45,17 @@ function Mitra() {
 
   const lastColumn = (last: any) => {
     return (
-      <div className="flex items-center justify-center w-full mt-6">
+      <div className="flex items-center justify-center mt-6 ">
         {last.map((partner: any) => (
           <div
             key={partner.id}
             className={` flex items-center justify-center px-4 `}
           >
-            <img
-              // className={
-              //   window.width! < 600 && window.width! > 100
-              //     ? "h-[50px] w-[50px]"
-              //     : "h-[100px] w-[100px]"
-              // }
-              // className="object-scale-down"
-              className="h-[100px] w-[100px]"
+            <Image
+              className="w-full object-scale-down"
+              width="0"
+              height="0"
+              sizes="75vw"
               src={partner.our_partner_image}
               alt={partner.our_partner_image_alt}
             />
@@ -115,11 +80,7 @@ function Mitra() {
 
     let first = data?.results.slice(0, lastCount);
     let last = data?.results.slice(lastCount, data?.results.length);
-    return (
-      <div>
-        {firstColumn(first, modulo)} {lastColumn(last)}
-      </div>
-    );
+    return <div>{/* {firstColumn(first, modulo)} {lastColumn(last)} */}</div>;
   };
   return (
     <div className="flex flex-col justify-center items-center space-y-6 p-20 text-black bg-white">

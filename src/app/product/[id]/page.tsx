@@ -27,13 +27,7 @@ function DetailProduct({ params }: any) {
   const { id } = params;
   const { data, isLoading } = useGetProductDetail(id);
   return (
-    <Suspense
-      fallback={
-        <div className="bg-black min-h-screen">
-          <p className="text-white">Loading...</p>
-        </div>
-      }
-    >
+    <>
       <div>
         <div className="bg-white text-black">
           {data?.results.length !== 0 && isLoading === false ? (
@@ -57,7 +51,7 @@ function DetailProduct({ params }: any) {
         </div>
       </div>
       <WhatsappFloat />
-    </Suspense>
+    </>
   );
 }
 

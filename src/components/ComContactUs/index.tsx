@@ -10,14 +10,9 @@ import {
   Space,
   notification,
 } from "antd";
-import { NotificationPlacement } from "antd/es/notification/interface";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-const styles = {
-  border: 0,
-};
 
 const formSchema = z.object({
   name: z.string(),
@@ -88,7 +83,8 @@ function ComponentContactUs() {
         <iframe
           className="h-[300px] sm:h-[450px] md:h-[600px] lg:h-[450px] xl:h-[600px] w-full"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.187538790804!2d106.66909917975539!3d-6.369771345838335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e4349a9a9891%3A0x2be9f0a6efd082c8!2sJl.%20Gotong%20Royong%20No.268%2C%20Pabuaran%2C%20Kec.%20Gn.%20Sindur%2C%20Kabupaten%20Bogor%2C%20Jawa%20Barat%2016340!5e0!3m2!1sen!2sid!4v1717926114662!5m2!1sen!2sid"
-          style={styles}
+          width="0"
+          height="0"
           allowFullScreen={true}
           loading="lazy"
         ></iframe>
